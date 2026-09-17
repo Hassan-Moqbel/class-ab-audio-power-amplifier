@@ -1,0 +1,8 @@
+# OS metadata and cache
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Editor autosaves
+*~
+*.swp
