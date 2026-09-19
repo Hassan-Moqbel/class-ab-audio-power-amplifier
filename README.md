@@ -33,40 +33,63 @@ flowchart LR
 ## Theoretical & Mathematical Models
 
 ### 1. Diode Biasing & Crossover Elimination
+
 To keep the output transistors precisely on the threshold of conduction (Class AB), the biasing voltage $V_{BB}$ provided by the diode string must equal the sum of the base-emitter drops of the push-pull pair:
-$$V_{BB} = V_{D1} + V_{D2} \approx V_{BE,Q1} + |V_{BE,Q2}|$$
+
+$$
+V_{BB} = V_{D1} + V_{D2} \approx V_{BE,Q1} + |V_{BE,Q2}|
+$$
 
 ### 2. Maximum Output Power
-Assuming ideal transistor saturation ($V_{CE,sat} \approx 0\text{V}$), the maximum continuous sinusoidal RMS power delivered to the speaker ($R_L$) is:
-$$P_{out(max)} = \frac{V_{peak}^2}{2 R_L} = \frac{(V_{CC} - V_{CE,sat})^2}{2 R_L}$$
+
+Assuming ideal transistor saturation ($V_{CE,\text{sat}} \approx 0\text{ V}$), the maximum continuous sinusoidal RMS power delivered to the speaker ($R_L$) is:
+
+$$
+P_{\text{out}(\max)} = \frac{V_{\text{peak}}^2}{2R_L} = \frac{(V_{CC} - V_{CE,\text{sat}})^2}{2R_L}
+$$
 
 ### 3. Maximum Theoretical Conversion Efficiency
-Class AB push-pull amplifiers can achieve highly efficient DC-to-AC conversion, theoretically approaching:
-$$\eta_{max} = \frac{\pi}{4} \cdot \frac{V_{peak}}{V_{CC}} \approx 78.54\%$$
+
+Class AB push-pull amplifiers achieve highly efficient DC-to-AC conversion, theoretically approaching:
+
+$$
+\eta_{\max} = \frac{\pi}{4} \cdot \frac{V_{\text{peak}}}{V_{CC}} \approx 78.5\%
+$$
 
 ### 4. Maximum Transistor Thermal Dissipation
-The maximum power dissipated by the transistors as heat occurs when the peak output voltage reaches $V_{peak} = \frac{2}{\pi} V_{CC}$:
-$$P_{D,max(total)} = \frac{2 V_{CC}^2}{\pi^2 R_L}$$
+
+The maximum power dissipated by the transistors as heat occurs when the peak output voltage reaches $V_{\text{peak}} = \frac{2}{\pi} V_{CC}$:
+
+$$
+P_{D,\max(\text{total})} = \frac{2V_{CC}^2}{\pi^2 R_L}
+$$
 
 ### 5. Emitter Degeneration & Thermal Stability
-Thermal runaway is mitigated by placing small power resistors ($R_E \approx 0.22\Omega$) at the transistor emitters. The stabilizing feedback loop operates as follows:
-$$V_{BE} = V_{B} - I_E R_E \implies \Delta T \uparrow \implies I_C \uparrow \implies V_{RE} \uparrow \implies V_{BE} \downarrow \implies I_C \text{ stabilizes}$$
+
+Thermal runaway is mitigated by placing small power resistors ($R_E \approx 0.22\ \Omega$) at the transistor emitters. The stabilizing feedback loop operates as follows:
+
+$$
+V_{BE} = V_B - I_E R_E \implies \Delta T \uparrow \implies I_C \uparrow \implies V_{RE} \uparrow \implies V_{BE} \downarrow \implies I_C \text{ stabilizes}
+$$
+
+---
 
 ## Verified Bill of Materials (BOM)
+
 | Component Type | Specification / Function |
 | :--- | :--- |
 | **Output Stage (NPN/PNP)** | High Power Complementary Pair (e.g., TIP41C/TIP42C or 2SD718/2SB688) |
 | **Biasing Diodes** | 1N4148 or equivalent (thermally coupled to output heatsink) |
-| **Emitter Resistors ($R_E$)** |$0.22\Omega$to$0.47\Omega$ (5W Ceramic) |
+| **Emitter Resistors ($R_E$)** | 0.22 Ω to 0.47 Ω (5W Ceramic) |
 | **Pre-amp Transistors** | Low-noise NPN (e.g., BC547 or 2N3904) |
-| **Input/Output Coupling Caps** | $10\mu\text{F}$Input /$1000\mu\text{F}$to$2200\mu\text{F}$ Output DC Blocking |
-| **Load Impedance ($R_L$)** |$4\Omega$or$8\Omega$ Subwoofer |
+| **Input/Output Coupling Caps** | 10 µF (Input) / 1000 µF to 2200 µF (Output DC Blocking) |
+| **Load Impedance ($R_L$)** | 4 Ω or 8 Ω Subwoofer / Speaker |
 
 ## Repository Layout Tree
 ```text
 .
 ├── _archive/              # Miscellaneous drafts and artifacts
-├── docs/                  # Comprehensive engineering design reports (.docx, .pdf)
+├── docs/Class_AB_Audio_Power_Amplifier_Report.pdf)
 │   └── images/            # Original schematic screenshots and simulation waveform plots
 └── README.md              # P01 Gold Standard Documentation
 ```
@@ -75,7 +98,7 @@ $$V_{BE} = V_{B} - I_E R_E \implies \Delta T \uparrow \implies I_C \uparrow \imp
 The operating quiescent current ($I_Q$) is carefully calibrated via the biasing network to sit just slightly above cut-off (Class AB classification). This small standing current eliminates the dead zone (crossover distortion) typically found in pure Class B amplifiers, drastically lowering Total Harmonic Distortion (THD) at low listening volumes, while maintaining excellent transient efficiency during bass-heavy dynamic peaks.
 
 ## Authentic Evidence Catalog
-- **Engineering Reports**: [`docs/حسن مقبل_علي السودي_ مشروع الكترونيات1.pdf`](docs/)
+- **Engineering Reports**: [`docs/Class_AB_Audio_Power_Amplifier_Report.pdf`](docs/)
 - **Design Schematics & Visual Evidence**: Located in [`docs/images/`](docs/images/) **[ORIGINAL DESIGN & SIMULATION ARTIFACTS]**.
 
 ## Engineering Defensibility & Limitations
