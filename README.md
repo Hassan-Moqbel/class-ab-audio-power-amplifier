@@ -11,7 +11,7 @@ High-fidelity audio reproduction requires a delicate balance between power effic
 
 > [!WARNING]
 > **Thermal Safety & Acoustic Load Callout**
-> Bipolar Junction Transistors (BJTs) are highly susceptible to **Thermal Runaway** due to their negative temperature coefficient ($V_{BE}$ drops as temperature rises). Failing to correctly size the heatsinks or correctly bias the complementary output stage can lead to catastrophic silicon failure. Furthermore, driving an incorrect load impedance (e.g., $2\Omega$ instead of $4\Omega/8\Omega$) will exceed the transistors' safe operating area (SOA). Output DC-blocking capacitors must be carefully rated to prevent DC offset voltages from melting speaker voice coils.
+> Bipolar Junction Transistors (BJTs) are highly susceptible to **Thermal Runaway** due to their negative temperature coefficient ($V_{BE}$drops as temperature rises). Failing to correctly size the heatsinks or correctly bias the complementary output stage can lead to catastrophic silicon failure. Furthermore, driving an incorrect load impedance (e.g.,$2\Omega$instead of$4\Omega/8\Omega$) will exceed the transistors' safe operating area (SOA). Output DC-blocking capacitors must be carefully rated to prevent DC offset voltages from melting speaker voice coils.
 
 ## System Highlights
 - **Complementary Symmetry Output Stage**: Utilizes a matched NPN/PNP transistor pair to handle alternating half-cycles, greatly increasing conversion efficiency over pure Class A architectures.
@@ -57,10 +57,10 @@ $$V_{BE} = V_{B} - I_E R_E \implies \Delta T \uparrow \implies I_C \uparrow \imp
 | :--- | :--- |
 | **Output Stage (NPN/PNP)** | High Power Complementary Pair (e.g., TIP41C/TIP42C or 2SD718/2SB688) |
 | **Biasing Diodes** | 1N4148 or equivalent (thermally coupled to output heatsink) |
-| **Emitter Resistors ($R_E$)** | $0.22\Omega$ to $0.47\Omega$ (5W Ceramic) |
+| **Emitter Resistors ($R_E$)** |$0.22\Omega$to$0.47\Omega$ (5W Ceramic) |
 | **Pre-amp Transistors** | Low-noise NPN (e.g., BC547 or 2N3904) |
-| **Input/Output Coupling Caps** | $10\mu\text{F}$ Input / $1000\mu\text{F}$ to $2200\mu\text{F}$ Output DC Blocking |
-| **Load Impedance ($R_L$)** | $4\Omega$ or $8\Omega$ Subwoofer |
+| **Input/Output Coupling Caps** | $10\mu\text{F}$Input /$1000\mu\text{F}$to$2200\mu\text{F}$ Output DC Blocking |
+| **Load Impedance ($R_L$)** |$4\Omega$or$8\Omega$ Subwoofer |
 
 ## Repository Layout Tree
 ```text
