@@ -1,4 +1,4 @@
-# P10: Class AB / Ultra Bass Amplifier
+﻿# Class AB / Ultra Bass Amplifier
 
 ![Analog Electronics](https://img.shields.io/badge/Domain-Analog_Electronics-FF6F00?style=for-the-badge)
 ![Class AB Amplifier](https://img.shields.io/badge/Topology-Class_AB_Amplifier-009999?style=for-the-badge)
