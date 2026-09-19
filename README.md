@@ -11,7 +11,7 @@ High-fidelity audio reproduction requires a delicate balance between power effic
 
 > [!WARNING]
 > **Thermal Safety & Acoustic Load Callout**
-> Bipolar Junction Transistors (BJTs) are highly susceptible to **Thermal Runaway** due to their negative temperature coefficient ($V_{BE}$drops as temperature rises). Failing to correctly size the heatsinks or correctly bias the complementary output stage can lead to catastrophic silicon failure. Furthermore, driving an incorrect load impedance (e.g.,$2\Omega$instead of$4\Omega/8\Omega$) will exceed the transistors' safe operating area (SOA). Output DC-blocking capacitors must be carefully rated to prevent DC offset voltages from melting speaker voice coils.
+> Bipolar Junction Transistors (BJTs) are highly susceptible to **Thermal Runaway** due to their negative temperature coefficient ($V_{	ext{BE}}$ drops as temperature rises). Failing to correctly size the heatsinks or correctly bias the complementary output stage can lead to catastrophic silicon failure. Furthermore, driving an incorrect load impedance (e.g., 2 Ω instead of 4 Ω / 8 Ω) will exceed the transistors' safe operating area (SOA). Output DC-blocking capacitors must be carefully rated to prevent DC offset voltages from melting speaker voice coils.
 
 ## System Highlights
 - **Complementary Symmetry Output Stage**: Utilizes a matched NPN/PNP transistor pair to handle alternating half-cycles, greatly increasing conversion efficiency over pure Class A architectures.
